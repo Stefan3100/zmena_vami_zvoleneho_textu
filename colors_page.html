@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Stylish Colors</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hello = document.querySelector('#hello');
+            document.querySelector('form').onsubmit = function() {
+                    const name = document.querySelector('#name').value;
+                    event.preventDefault();
+                    document.querySelector('h1').innerHTML = `${name}`;
+
+            document.querySelector('#color-change').onchange = function () {
+                hello.style.color = this.value;
+};
+
+
+            document.querySelector('#font-change').onchange = function () {
+                hello.style.fontFamily = this.value;
+};
+
+
+            document.querySelector('#size-change').onchange = function () {
+                hello.style.fontSize = this.value;
+            };
+        }
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="hello">Zdravím. Zadej text a poté jsi ho můžeš upravit.</h1>
+        <form>
+        <input autofocus="" id="name" placeholder="Text" type="text">
+        <input type="submit" value="Potvrdit">
+    </form>
+
+
+        <div class="controls">
+            <label>Color:
+                <select id="color-change">
+                    <option value="black">Black</option>
+                    <option value="grey">Grey</option>
+                    <option value="brown">Brown</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    
+
+                </select>
+            </label>
+
+
+
+            <label>Font:
+                <select id="font-change">
+                    <option value="Arial">Arial</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Tahoma">Tahoma</option>
+                </select>
+            </label>
+
+            <label>Size:
+                <select id="size-change">
+                    <option value="0.666rem">10px</option>
+                    <option value="1.25rem">20px</option>
+                    <option value="1.916rem">30px</option>
+                    <option value="2.5rem">40px</option>
+                    <option value="3.166rem">50px</option>
+                    <option value="4.75rem">60px</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+
+</body>
+</html>
